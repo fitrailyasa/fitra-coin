@@ -9,7 +9,75 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
   <title>Fitra Coin</title>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+  <style>
+    body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #000000;
+  background-image: linear-gradient(225deg, #000000 0%, #04011a 50%, #000000 100%) !important;
+}
+
+.bg-dark {
+  background-color: #000000;
+  background-image: linear-gradient(225deg, #000000 0%, #04011a 50%, #000000 100%) !important;
+}
+
+.btn-outline-light {
+  border: 1px solid rgba(113, 111, 155, 0.5);
+}
+
+aside,
+.nav {
+  background-color: #a0a0a00b;
+}
+
+.nav-link {
+  color: #fff;
+}
+
+.konten {
+  padding: 50px;
+}
+
+.judul {
+  font-size: 60px;
+}
+
+.tombol {
+  width: 216px;
+  height: 94px;
+}
+
+.ikon {
+  margin: 5px;
+  width: 40px;
+}
+
+.kartu {
+  border: 1px solid rgba(113, 111, 155, 0.5);
+  border-radius: 20px;
+}
+
+.container {
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .judul {
+    font-size: 40px;
+  }
+
+  .konten {
+    padding: 5px;
+  }
+
+  .ikon {
+    margin: 5px;
+    width: 30px;
+  }
+}
+  </style>
 </head>
 <body>
 
@@ -29,6 +97,42 @@
             <a class="nav-link" href="#">Link</a>
             <a class="nav-link" href="#">Link</a>
           </ul>
+          <button class="btn btn-outline-light ms-auto" data-bs-toggle="modal" data-bs-target="#connectWalletModal"><i class="fas fa-wallet"></i> Connect Wallet</button>
+          <!-- Modal Connect Wallet -->
+          <div class="modal fade" id="connectWalletModal" tabindex="-1" aria-labelledby="connectWalletModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-dark rounded">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="connectWalletModalLabel">Connect Wallet</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-start">
+                  <form>
+                    <div class="mb-3 kartu">
+                      <img class="ikon" src="assets/img/mm-icon.png" alt="">
+                      <span>Metamask</span>
+                    </div>
+                    <div class="mb-3 kartu">
+                      <img class="ikon" src="assets/img/tw2-icon.png" alt="">
+                      <span>Trust Wallet</span>
+                    </div>
+                    <div class="mb-3 kartu">
+                      <img class="ikon" src="assets/img/wc-icon.png" alt="">
+                      <span>Wallet Connect</span>
+                    </div>
+                    <div class="mb-3 kartu">
+                      <img class="ikon" src="assets/img/cb-icon.png" alt="">
+                      <span>Coinbase</span>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn kartu" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn kartu text-white">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -74,6 +178,14 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+  // Fungsi untuk menampilkan modal saat tombol Connect Wallet ditekan
+  document.getElementById('connectWalletModal').addEventListener('shown.bs.modal', function () {
+    // Lakukan sesuatu saat modal ditampilkan, misalnya membersihkan input
+    document.getElementById('walletAddress').value = '';
+  });
+</script>
 
 </main>
 </body>
